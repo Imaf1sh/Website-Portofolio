@@ -89,8 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // 5. AJAX CONTACT FORM SUBMISSION
+    // 5. CLIENT-SIDE CONTACT FORM SUBMISSION (MOCK ACTION)
     const contactForm = document.getElementById('portfolio-contact-form');
     const contactAlert = document.getElementById('contact-alert');
     const alertMessage = contactAlert.querySelector('.alert-message');
@@ -99,78 +98,78 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnText = submitBtn.querySelector('.btn-text');
     const spinner = submitBtn.querySelector('.loading-spinner');
 
-    // Close alert click
-    alertCloseBtn.addEventListener('click', () => {
-        contactAlert.classList.add('hidden');
-    });
+    if (alertCloseBtn) {
+        alertCloseBtn.addEventListener('click', () => {
+            contactAlert.classList.add('hidden');
+        });
+    }
 
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-        // Reset previous errors and alert
-        contactAlert.className = 'alert hidden';
-        document.querySelectorAll('.error-msg').forEach(msg => msg.textContent = '');
-        
-        // Disable button and show spinner
-        submitBtn.disabled = true;
-        btnText.classList.add('hidden');
-        spinner.classList.remove('hidden');
-
-        // Form action & method
-        const url = contactForm.action;
-        const formData = new FormData(contactForm);
-
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
-                    'Accept': 'application/json'
-                },
-                body: formData
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                // Success submission
-                contactAlert.className = 'alert alert-success';
-                alertMessage.textContent = data.message;
-                contactForm.reset();
-            } else if (response.status === 422) {
-                // Validation error
+            // Reset previous errors and alert
+            contactAlert.className = 'alert hidden';
+            document.querySelectorAll('.error-msg').forEach(msg => msg.textContent = '');
+            
+            // Client-side validation
+            const nameVal = document.getElementById('name').value.trim();
+            const emailVal = document.getElementById('email').value.trim();
+            const subjectVal = document.getElementById('subject').value.trim();
+            const messageVal = document.getElementById('message').value.trim();
+            
+            let hasErrors = false;
+            
+            if (!nameVal) {
+                document.getElementById('error-name').textContent = 'Nama wajib diisi.';
+                hasErrors = true;
+            }
+            
+            if (!emailVal) {
+                document.getElementById('error-email').textContent = 'Email wajib diisi.';
+                hasErrors = true;
+            } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+                document.getElementById('error-email').textContent = 'Format email tidak valid.';
+                hasErrors = true;
+            }
+            
+            if (!messageVal) {
+                document.getElementById('error-message').textContent = 'Pesan wajib diisi.';
+                hasErrors = true;
+            } else if (messageVal.length < 10) {
+                document.getElementById('error-message').textContent = 'Pesan minimal terdiri dari 10 karakter.';
+                hasErrors = true;
+            }
+            
+            if (hasErrors) {
                 contactAlert.className = 'alert alert-danger';
                 alertMessage.textContent = 'Harap periksa kembali inputan Anda.';
-                
-                // Set individual error messages
-                if (data.errors) {
-                    Object.keys(data.errors).forEach(key => {
-                        const errorMsgElement = document.getElementById(`error-${key}`);
-                        if (errorMsgElement) {
-                            errorMsgElement.textContent = data.errors[key][0];
-                        }
-                    });
-                }
-            } else {
-                // Server or other error
-                contactAlert.className = 'alert alert-danger';
-                alertMessage.textContent = data.message || 'Terjadi kesalahan pada server. Silakan coba lagi nanti.';
+                contactAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                return;
             }
-        } catch (error) {
-            console.error('Submission Error:', error);
-            contactAlert.className = 'alert alert-danger';
-            alertMessage.textContent = 'Gagal mengirim pesan. Silakan periksa koneksi internet Anda.';
-        } finally {
-            // Re-enable button and hide spinner
-            submitBtn.disabled = false;
-            btnText.classList.remove('hidden');
-            spinner.classList.add('hidden');
-            
-            // Scroll to the alert for visibility
-            contactAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }
-    });
 
+            // Disable button and show spinner to simulate backend processing
+            submitBtn.disabled = true;
+            btnText.classList.add('hidden');
+            spinner.classList.remove('hidden');
+
+            // Simulate network latency (1 second)
+            setTimeout(() => {
+                // Re-enable button and hide spinner
+                submitBtn.disabled = false;
+                btnText.classList.remove('hidden');
+                spinner.classList.add('hidden');
+                
+                // Show Success Notification
+                contactAlert.className = 'alert alert-success';
+                alertMessage.textContent = 'Pesan Anda berhasil dikirim! Terima kasih telah menghubungi saya.';
+                contactForm.reset();
+                
+                // Scroll to the alert for visibility
+                contactAlert.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 1000);
+        });
+    }
     // 6. EXPERIENCE TAB SWITCHING
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContentPanels = document.querySelectorAll('.tab-content-panel');

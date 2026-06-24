@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website Portofolio Profesional Oktaviandra Wahyuramadhan - Full-Stack Developer Bintan Timur, Kepulauan Riau.">
+    <meta name="author" content="Oktaviandra Wahyuramadhan">
+    <title>Oktaviandra Wahyuramadhan - Full-Stack Developer</title>
+
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body>
+
+    <!-- Glowing Background blobs -->
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+
+    <!-- Navigation Header -->
+    <header class="main-header" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo" id="logo-link">
+                <span>Okta</span><span class="navy-dot">.</span>
+            </a>
+            
+            <nav class="nav-menu" id="nav-menu-container">
+                <a href="#home" class="nav-link active" id="nav-home">Home</a>
+                <a href="#about" class="nav-link" id="nav-about">About</a>
+                <a href="#projects" class="nav-link" id="nav-projects">Projects</a>
+                <a href="#experience" class="nav-link" id="nav-experience">Experience</a>
+                <a href="#contact" class="nav-link" id="nav-contact">Contact</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle-btn" aria-label="Toggle Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-image-container">
+                    <div class="profile-photo-wrapper">
+                        <img src="images/profile.jpg" alt="Profile Photo" class="profile-photo" id="hero-profile-image">
+                        <div class="photo-glow-effect"></div>
+                    </div>
+                    <!-- Glowing decorative element behind photo -->
+                    <div class="hero-visual">
+                        <div class="geometric-shape">
+                            <div class="inner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-content">
+                    <span class="hero-welcome">Selamat Datang di Portofolio Saya</span>
+                    <h1 class="hero-title">
+                        Hi, Saya <span class="highlight">Oktaviandra</span><br>
+                        yang Fokus pada <div class="slide-text-container"><span id="slide-text" class="navy-glow slide-text"></span></div>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Full-Stack Developer yang berdedikasi membangun produk digital fungsional, cepat, dan berdampak nyata bagi instansi pemerintah serta bisnis.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn btn-primary" id="hero-view-projects">Lihat Proyek <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="#contact" class="btn btn-secondary" id="hero-contact-me">Hubungi Saya</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header center-align">
+                    <span class="section-tag">01. Tentang Saya</span>
+                    <h2 class="section-title">Membuat Solusi Digital Melalui Kode</h2>
+                </div>
+                
+                <div class="about-wrapper">
+                    <div class="about-text-center">
+                        <p>
+                            Saya adalah seorang <strong>Full-Stack Developer</strong> dengan rekam jejak terbukti sejak 2022 dalam mengembangkan sistem yang aktif digunakan di dunia nyata, bukan sekadar untuk pajangan portofolio.
+                        </p>
+                        <p>
+                            Produk yang saya buat aktif digunakan oleh instansi pemerintah (<strong>BPS Kepulauan Riau</strong>) untuk mendukung kelancaran Sensus Ekonomi 2026. Proyek tersebut berhasil diselesaikan lebih cepat dari tenggat waktu dan mendapat apresiasi langsung dari pimpinan.
+                        </p>
+                        <p>
+                            Saat ini saya sedang menempuh pendidikan Sarjana Ilmu Komputer di Universitas Maritim Raja Ali Haji (UMRAH) dengan IPK 3.43. Saya menguasai frontend (React, Vue, Next.js), backend (Node.js, PHP, Go), serta analisis data terintegrasi Looker Studio.
+                        </p>
+                    </div>
+                    
+                    <div class="skills-section-center">
+                        <h3 class="skills-title-center">Keahlian & Teknologi</h3>
+                        <div class="skills-columns">
+                            <div class="skill-card-column" id="skill-col-backend">
+                                <div class="skill-card-header-icon"><i class="fa-solid fa-server"></i></div>
+                                <h4>Backend & DB</h4>
+                                <div class="skill-badges">
+                                    <span class="badge" id="skill-nodejs">Node.js</span>
+                                    <span class="badge" id="skill-php">PHP (Laravel/CI)</span>
+                                    <span class="badge" id="skill-go">Go (Golang)</span>
+                                    <span class="badge" id="skill-python">Python</span>
+                                    <span class="badge" id="skill-postgres">PostgreSQL</span>
+                                    <span class="badge" id="skill-mysql">MySQL</span>
+                                </div>
+                            </div>
+                            <div class="skill-card-column" id="skill-col-frontend">
+                                <div class="skill-card-header-icon"><i class="fa-solid fa-code"></i></div>
+                                <h4>Frontend</h4>
+                                <div class="skill-badges">
+                                    <span class="badge" id="skill-react">React</span>
+                                    <span class="badge" id="skill-vue">Vue.js</span>
+                                    <span class="badge" id="skill-next">Next.js</span>
+                                    <span class="badge" id="skill-html">HTML5/CSS3</span>
+                                </div>
+                            </div>
+                            <div class="skill-card-column" id="skill-col-tools">
+                                <div class="skill-card-header-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                                <h4>DevOps & Data</h4>
+                                <div class="skill-badges">
+                                    <span class="badge" id="skill-looker">Looker Studio</span>
+                                    <span class="badge" id="skill-metabase">Metabase</span>
+                                    <span class="badge" id="skill-git">Git/GitHub</span>
+                                    <span class="badge" id="skill-figma">Figma</span>
+                                    <span class="badge" id="skill-firebase">Firebase</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header center-align">
+                    <span class="section-tag">02. Proyek Terpilih</span>
+                    <h2 class="section-title">Hasil Karya & Kontribusi</h2>
+                </div>
+
+                <div class="projects-list-container">
+                    <!-- Project Row 1 -->
+                    <div class="project-list-row" id="project-row-1">
+                        <div class="project-row-left">
+                            <h3 class="project-row-title">Dashboard Kepri BPS</h3>
+                            <div class="project-row-tags">
+                                <span class="project-tag-badge">HTML5</span>
+                                <span class="project-tag-badge">CSS3</span>
+                                <span class="project-tag-badge">JavaScript</span>
+                                <span class="project-tag-badge">CodeIgniter</span>
+                            </div>
+                        </div>
+                        <div class="project-row-center">
+                            <p class="project-row-description">Membangun sistem indikator ekonomi strategis Kepulauan Riau dari nol. Selesai lebih cepat dari jadwal dan direview langsung oleh Kepala BPS Kepri, BPS RI, dan Menteri Dalam Negeri untuk persiapan Sensus Ekonomi 2026.</p>
+                        </div>
+                        <div class="project-row-right">
+                            <a href="https://github.com/Imaf1sh" target="_blank" class="project-row-link" aria-label="GitHub Repository" id="project-github-1"><i class="fa-brands fa-github"></i> Info/Repo</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Row 2 -->
+                    <div class="project-list-row" id="project-row-2">
+                        <div class="project-row-left">
+                            <h3 class="project-row-title">Smart Task</h3>
+                            <div class="project-row-tags">
+                                <span class="project-tag-badge">Go</span>
+                                <span class="project-tag-badge">PostgreSQL</span>
+                                <span class="project-tag-badge">Redis</span>
+                                <span class="project-tag-badge">Firebase</span>
+                                <span class="project-tag-badge">Flutter</span>
+                            </div>
+                        </div>
+                        <div class="project-row-center">
+                            <p class="project-row-description">Mengembangkan backend performa tinggi dengan bahasa Go yang terintegrasi secara mulus dengan frontend mobile Flutter. (Dalam Pengembangan / In Progress)</p>
+                        </div>
+                        <div class="project-row-right">
+                            <a href="https://github.com/Imaf1sh" target="_blank" class="project-row-link" aria-label="GitHub Repository" id="project-github-2"><i class="fa-brands fa-github"></i> Info/Repo</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Row 3 -->
+                    <div class="project-list-row" id="project-row-3">
+                        <div class="project-row-left">
+                            <h3 class="project-row-title">Dashboard Tanjak SAKERNAS</h3>
+                            <div class="project-row-tags">
+                                <span class="project-tag-badge">Looker Studio</span>
+                                <span class="project-tag-badge">HTML5</span>
+                                <span class="project-tag-badge">CSS3</span>
+                                <span class="project-tag-badge">JavaScript</span>
+                            </div>
+                        </div>
+                        <div class="project-row-center">
+                            <p class="project-row-description">Mendesain dashboard pasar tenaga kerja BPS interaktif terintegrasi dengan Google Looker Studio yang memiliki tampilan Glassmorphism, menyajikan data ribuan responden menjadi informasi ringkas bagi pengambil keputusan.</p>
+                        </div>
+                        <div class="project-row-right">
+                            <a href="https://github.com/Imaf1sh" target="_blank" class="project-row-link" aria-label="GitHub Repository" id="project-github-3"><i class="fa-brands fa-github"></i> Info/Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <div class="section-header center-align">
+                    <span class="section-tag">03. Perjalanan Karier</span>
+                    <h2 class="section-title">Pengalaman & Pendidikan</h2>
+                </div>
+
+                <div class="experience-tabs-wrapper">
+                    <div class="experience-tab-buttons" id="exp-tab-buttons-container">
+                        <button class="tab-btn active" data-tab="work-tab" id="tab-btn-work"><i class="fa-solid fa-briefcase"></i> Pengalaman Kerja</button>
+                        <button class="tab-btn" data-tab="education-tab" id="tab-btn-edu"><i class="fa-solid fa-graduation-cap"></i> Pendidikan</button>
+                    </div>
+
+                    <div class="experience-tab-contents">
+                        <!-- Work Tab Content -->
+                        <div class="tab-content-panel active" id="work-tab">
+                            <div class="timeline">
+                                <div class="timeline-item" id="work-1">
+                                    <div class="timeline-dot"></div>
+                                    <span class="timeline-date">Jan 2026 – Mar 2026</span>
+                                    <h4 class="timeline-role">IT Web Developer & Data Analyst (Internship)</h4>
+                                    <h5 class="timeline-org">BPS Provinsi Kepulauan Riau</h5>
+                                    <p class="timeline-desc">Membangun Dashboard BPS Kepri dari nol, selesai lebih cepat dari jadwal. Dashboard dipresentasikan langsung di hadapan Kepala BPS Kepri, BPS RI, dan Menteri Dalam Negeri. Mendesain Dashboard SAKERNAS Tanjak terintegrasi Google Looker Studio untuk visualisasi pasar kerja dari ribuan responden.</p>
+                                </div>
+                                <div class="timeline-item" id="work-2">
+                                    <div class="timeline-dot"></div>
+                                    <span class="timeline-date">Jan 2022 – Jun 2022</span>
+                                    <h4 class="timeline-role">IT Web Developer (Internship)</h4>
+                                    <h5 class="timeline-org">PT Tunas Idea Indonesia</h5>
+                                    <p class="timeline-desc">Magang kerja IT Web Developer, mempelajari pengembangan sistem web terstruktur dan fungsional sesuai standar industri.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Education Tab Content -->
+                        <div class="tab-content-panel" id="education-tab">
+                            <div class="timeline">
+                                <div class="timeline-item" id="edu-1">
+                                    <div class="timeline-dot"></div>
+                                    <span class="timeline-date">2023 – Sekarang</span>
+                                    <h4 class="timeline-role">Bachelor of Science in Computer Science</h4>
+                                    <h5 class="timeline-org">Universitas Maritim Raja Ali Haji (UMRAH)</h5>
+                                    <p class="timeline-desc">Fokus pada Software Development & Data Analytics. Indeks Prestasi Kumulatif (IPK) saat ini: 3.43 / 4.00.</p>
+                                </div>
+                                <div class="timeline-item" id="edu-2">
+                                    <div class="timeline-dot"></div>
+                                    <span class="timeline-date">2020 – 2023</span>
+                                    <h4 class="timeline-role">Rekayasa Perangkat Lunak (RPL)</h4>
+                                    <h5 class="timeline-org">SMKN 1 Bintan Timur</h5>
+                                    <p class="timeline-desc">Mempelajari dasar-dasar pemrograman, basis data, dan pengembangan aplikasi. Lulus dengan Rata-rata Nilai: 87.68.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-header center-align">
+                    <span class="section-tag">04. Hubungi Saya</span>
+                    <h2 class="section-title">Mulai Obrolan Baru</h2>
+                    <p class="section-subtitle">Punya proyek menarik atau ingin berdiskusi? Kirimkan pesan Anda melalui formulir di bawah ini.</p>
+                </div>
+
+                <!-- Horizontal Contact Info list above form -->
+                <div class="contact-info-horizontal">
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="info-card-text">
+                            <span>Email</span>
+                            <strong>oktaviandrawahyuramadhan@gmail.com</strong>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="info-card-text">
+                            <span>Telepon / WA</span>
+                            <strong>083148796357</strong>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="info-card-text">
+                            <span>Lokasi</span>
+                            <strong>Bintan Timur, Kepulauan Riau</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-centered-container">
+                    <!-- Contact Form Card -->
+                    <div class="contact-form-card">
+                        <form id="portfolio-contact-form" action="" method="POST">
+                            <!-- Alert Notification -->
+                            <div id="contact-alert" class="alert hidden">
+                                <span class="alert-message"></span>
+                                <button type="button" class="alert-close-btn" id="alert-close-btn">&times;</button>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Nama Lengkap <span class="required-star">*</span></label>
+                                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                                    <span class="error-msg" id="error-name"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Alamat Email <span class="required-star">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="johndoe@example.com" required>
+                                    <span class="error-msg" id="error-email"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subjek</label>
+                                <input type="text" id="subject" name="subject" placeholder="Diskusi Kerjasama">
+                                <span class="error-msg" id="error-subject"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Pesan Anda <span class="required-star">*</span></label>
+                                <textarea id="message" name="message" rows="5" placeholder="Tuliskan pesan detail Anda di sini..." required></textarea>
+                                <span class="error-msg" id="error-message"></span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block" id="contact-submit-btn">
+                                <span class="btn-text">Kirim Pesan</span>
+                                <span class="loading-spinner hidden"><i class="fa-solid fa-circle-notch fa-spin"></i> Mengirim...</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <p class="copyright">&copy; 2026 Oktaviandra. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://github.com/Imaf1sh" target="_blank" aria-label="GitHub" id="footer-github-link"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/oktaviandra-wahyu-ramadhan-001a682a7/" target="_blank" aria-label="LinkedIn" id="footer-linkedin-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://wa.me/6283148796357" target="_blank" aria-label="WhatsApp" id="footer-whatsapp-link"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:oktaviandrawahyuramadhan@gmail.com" aria-label="Email" id="footer-email-link"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JS -->
+    <script src="js/portfolio.js"></script>
+</body>
+</html>
