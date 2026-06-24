@@ -1,14 +1,21 @@
 {
   "version": 2,
+  "framework": null,
   "buildCommand": null,
-  "outputDirectory": "public",
   "functions": {
     "api/index.php": {
       "runtime": "vercel-php@0.7.3"
     }
   },
   "routes": [
-    { "handle": "filesystem" },
+    {
+      "src": "/(css|js|images)/(.*)",
+      "dest": "/public/$1/$2"
+    },
+    {
+      "src": "/(favicon.ico|robots.txt)",
+      "dest": "/public/$1"
+    },
     {
       "src": "/(.*)",
       "dest": "/api/index.php"
